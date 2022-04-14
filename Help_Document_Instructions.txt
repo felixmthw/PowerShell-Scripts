@@ -1,0 +1,97 @@
+==================================================
+USB COPY TOOL v3.2 F# - HELP Document\Instructions
+==================================================
+
+Inctructions to Run the Tool:
+----------------------------
+Step 1: Create a Folder named "Temp" in "C:\" drive of the PC. If the Temp Folder already exists, then you can skip this step.
+Step 2: Copy the Folder USB_Copy_Tool to the Temp Folder
+Step 3: The Code runs only from the Temp Folder
+Step 4: Right Click on PowerShell.exe file in this Folder and select Run as Administrator
+Step 5: Copy and Paste the below text and Press Enter
+
+Set-ExecutionPolicy Unrestricted
+
+Press A to Choose Yes to All
+
+Step 6: Click Start Button and Type CMD in search
+Step 7: Right Click Command Prompt and Select Run as Administrator
+Step 8: Right Click on the Top Menu Bar where is says Administrator:Command Prompt and Select Defaults
+Step 9: Choose the Font Tab and Select the Font Size as 24 [This should make the Instructions appear Readable. You can increase it more as per your Screen Size]
+Step 10: Select Ok
+Step 11: Go to C:\Temp\USB_Copy_Tool and Right Click the File USB Copy Tool and select Send to and Choose Desktop(create shortcut). This should now create the USB Copy Tool Icon on the Desktop
+
+Step 12: To Run the USB Copy Tool, You can double click and Open USB Copy Tool. [The USB Copy Tool will automatically Run as Administrator by Default]
+
+
+
+Instructions to Set up the Input Files:
+--------------------------------------
+
+Drive_Letters File:
+* This File is used to specify the USB Drive Letters in the PC
+* Connect all the USB Disks and mark down the Drive Letters
+* Run the Program USB Copy Tool and Choose Option 7 to View\Edit the Drive Letters File
+* Enter the list of Drive Letters of the USB Drives in the below listed way
+* Make sure the Drive letters is entered without any space
+
+D:
+E:
+F:
+G:
+
+
+
+Label File:
+* This File is used to Specify the Label required for the USB Drives - Eg: AYC2022
+* Run the Program USB Copy Tool and Choose Option 6 to View\Edit the Label File
+* You can edit this file with the label and use it for all the future Copying Actions
+* By specifying the Label once in this file you do not have to specify it while copying thereby eliminating one step which could save time
+
+
+
+CopyEngine File:
+##DO NOT DOUBLE CLICK ON THIS FILE##
+* This File is used to set the Source & Destination of the Data to be Copied
+* Run the Program USB Copy Tool and Choose Option 5 to View\Edit the Copy File
+* The Command appears as below:
+
+@Echo Off
+Start robocopy C:\Temp\TestCopy D:\ /e /W:0 /R:0
+
+* Modify the path C:\Temp\TestCopy with the Source Folder Path which has to be Copied
+* After the Source File, enter the USB Drives D:\
+* The lines of Codes have to be added to the number of USB Drives available
+
+
+
+Drive_Contents [Inside Folder: Drive_Contents]:
+* Run the Program USB Copy Tool and Choose Option 9 to "View the Contents of all the USB Drives", you can view all the contents inside the USB Drives
+* A Copy of the Output will be saved to Drive_Contents.txt in the location C:\Temp\USB_Copy_Tool\Drive_Contents
+* This will be helpful to reference the Data in the Drives
+
+Results Folder:
+* You can View & Check the Results of the USB Copy Tool in the Copy Task Window that opens for each drives
+* Once the Data is Copied in the USB Disks the Copy of the Results will be Stored in this Folder
+* This is kept for historical records if you have missed to check the results on the on screen prompt window which shows if there are any Files Failed to be Copied
+* Check the Heading which shows Failed. If everything is 0 in this Column then you should be good
+* The Folder will be overwritten for each run
+
+
+
+USB-Check-Verification:
+* You can verify all the USB Disks have the same number of Files
+* If the Count of Files are same in all the USB Drives then all the Files are Copied Correctly
+* Ignore the Error in Red. This might be if any drives are missing which is present in the Driver_Letter File
+
+
+
+Extended Help:
+=============
+If the PC does not have the latest version of PowerShell Tool. Follow the Below steps to update it without Internet Connection:
+	* Go to the Folder "PowerShell Version Install" in USB_Copy_Tool Folder
+	* This Folder has the latest PowerShell Tools PowerShell-7.2.1
+	* Check which Architecture is your Desktop/Laptop is Eg. 32 Bit or 64 Bit
+	* If your Desktop/Laptop is running on 32 Bit Windows OS then install the Version PowerShell-7.2.1-win-x86
+	* If your Desktop/Laptop is running on 64 Bit Windows OS then install the Version PowerShell-7.2.1-win-x64
+
